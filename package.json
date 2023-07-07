@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Guru18650/libraverse_backend/issues"
   },
-  "homepage": "https://github.com/Guru18650/libraverse_backend#readme"
+  "homepage": "https://github.com/Guru18650/libraverse_backend#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
