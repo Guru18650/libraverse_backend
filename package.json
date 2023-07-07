@@ -1,0 +1,19 @@
+{
+  "name": "libraverse_backend",
+  "version": "0.0.1",
+  "description": "Backend for opensource Libraverse project",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Guru18650/libraverse_backend.git"
+  },
+  "author": "Guru18650",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/Guru18650/libraverse_backend/issues"
+  },
+  "homepage": "https://github.com/Guru18650/libraverse_backend#readme"
+}
