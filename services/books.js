@@ -11,12 +11,12 @@ async function getBookById(id) {
 async function getBooksByISBN(isbn, mode = "isbn_13") {
     const rows = await db.query(`SELECT * FROM books WHERE ${mode} = ${isbn}`);
     if(rows.length == 0)
-        return "Book not found"
-    return rows;
+        return {message:"Book not found",status:404}
+    return {rows,status:200}
 }
 
 async function getAllBooks() {
-    const rows = await db.query(`SELECT * FROM books`);
+    const rows = await db.query(`SELECT isbn_13, title, author, publisher, length FROM books`);
     return rows;
 }
 

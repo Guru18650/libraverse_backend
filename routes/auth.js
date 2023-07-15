@@ -21,8 +21,6 @@ router.post('/register', async function(req, res, next) {
 });
 
 router.post('/verify', async function(req, res, next) {
-    console.log(req.body);
-
     if(req.body.token == null)
         res.json("Fill in all the data", 400);
     else
