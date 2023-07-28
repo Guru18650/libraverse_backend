@@ -15,7 +15,6 @@ router.post('/id', async function(req, res, next) {
 });
 
 router.post('/isbn', async function(req, res, next) {
-    console.log(req.body)
     if(req.body.isbn == null)
         res.json("Fill in all the data", 400);
     else{
@@ -27,6 +26,16 @@ router.post('/isbn', async function(req, res, next) {
         else
             data = {message:"Invalid ISBN", status:400}
         res.json(data.rows, data.status);
+    }
+});
+
+router.post('/olfetch', async function(req, res, next) {
+    if(req.body.isbn == null)
+        res.json("Fill in all the data", 400);
+    else{
+        const isbn = req.body.isbn;
+        data = await books.olFetch(isbn);
+        res.json(data);
     }
 });
 

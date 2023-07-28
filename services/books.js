@@ -1,5 +1,5 @@
 const db = require('./db');
-
+const axios = require('axios');
 
 async function getBookById(id) {
     const rows = await db.query(`SELECT * FROM books WHERE book_id = ${id}`);
@@ -20,8 +20,14 @@ async function getAllBooks() {
     return rows;
 }
 
+async function olFetch(isbn) {
+    const rows = await axios.get(`https://openlibrary.com/books/${isbn}.json`);
+    return rows;
+}
+
 module.exports = {
     getBookById,
     getBooksByISBN,
-    getAllBooks
+    getAllBooks,
+    olFetch
 }
